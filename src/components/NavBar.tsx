@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function NavBar() {
   return (
-    <div className="navbar sticky top-0 z-50 bg-base-100 font-robotoSlab text-neutral-content">
+    <div className="navbar sticky top-0 z-30 bg-base-100 font-robotoSlab text-neutral-content">
       <div className="flex-1">
         <Link
           className="btn-ghost btn text-lg normal-case sm:text-2xl "
