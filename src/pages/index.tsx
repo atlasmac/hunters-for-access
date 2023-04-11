@@ -3,6 +3,7 @@ import Head from "next/head";
 import NavBar from "~/components/NavBar";
 import Footer from "~/components/Footer";
 import HomeHero from "~/components/HomeHero";
+import ImageGrid from "~/components/ImageGrid";
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
       <main>
         <NavBar />
         <HomeHero />
+        <ImageGrid />
         <Footer />
       </main>
     </>

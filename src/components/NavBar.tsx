@@ -10,7 +10,7 @@ function NavBar() {
           className="btn-ghost btn text-lg normal-case sm:text-2xl "
           href={"/"}
         >
-          Montana Hunters for Access
+          Hunters for Access
         </Link>
       </div>
       <div className="hidden flex-none lg:block">
