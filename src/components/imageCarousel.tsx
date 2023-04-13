@@ -5,14 +5,15 @@ import { Carousel } from "react-responsive-carousel";
 function ImageCarousel() {
   return (
     <Carousel autoPlay={true} infiniteLoop={true} showThumbs={false} >
-      <div >
-        <img src="/sky.jpg" className="h-[90vh] w-auto" />
-        <div className="legend"> <p>hello</p></div>
+      <div className="max-h-[90vh]">
+        <img src="/sky.jpg" />
       </div>
-      <div>
-        <img src="/hike.jpg" className="h-[90vh] w-auto" />
-        <div className="legend h-[100px]">
-          <p>hello</p>
+      <div className="max-h-[90vh]">
+        <img src="/hike.jpg" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-200 h-100 bg-white">
+            <p className="text-3xl text-gray-700">Hello</p>
+          </div>
         </div>
       </div>
     </Carousel>
