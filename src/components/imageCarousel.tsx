@@ -8,10 +8,11 @@ function ImageCarousel() {
     <Carousel autoPlay={true} infiniteLoop={false} showThumbs={false} >
       <div className="max-h-[90vh]">
         <img src="/hike.jpg" />
-        <HomePageBtn Description="Welcome to Hunters for Access" href="#about" />
+        <HomePageBtn Description="Welcome to Hunters for Access" href={'#about'} btnText={'Learn More'} />
       </div>
       <div className="max-h-[90vh]">
         <img src="/sky.jpg" />
+        <HomePageBtn Description="See what we've been up to" href={'/blog'} btnText={'View Blog'} />
       </div>
     </Carousel>
   );

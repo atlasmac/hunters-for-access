@@ -4,9 +4,10 @@ import Link from 'next/link'
 interface HomePageBtnProps {
   Description: string;
   href: string;
+  btnText: string;
 }
 
-function HomePageBtn({ Description, href }: HomePageBtnProps) {
+function HomePageBtn({ Description, href, btnText }: HomePageBtnProps) {
   return (
     <div className="absolute inset-0 flex items-center justify-center">
       <div className="w-200 h-100">
@@ -15,7 +16,7 @@ function HomePageBtn({ Description, href }: HomePageBtnProps) {
             {Description}
           </h1>
           <Link href={`${href}`} className="btn-primary btn h-fit">
-            <span>Learn More</span>
+            <span>{btnText}</span>
           </Link>
         </div>
       </div>
