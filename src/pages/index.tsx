@@ -3,16 +3,8 @@ import Head from "next/head";
 import NavBar from "~/components/NavBar";
 import Footer from "~/components/Footer";
 import HomeHero from "~/components/HomeHero";
-import ImageGrid from "~/components/ImageGrid";
-import geo from "~/data/geo.json";
-import states from "~/data/states.json";
-import sample from "~/data/sample.json";
-import dynamic from "next/dynamic";
-import { stat } from "fs";
+import About from "~/components/About";
 
-const MapWithNoSSR = dynamic(() => import("../components/Map"), {
-  ssr: false,
-});
 
 
 const Home: NextPage = () => {
@@ -31,8 +23,7 @@ const Home: NextPage = () => {
       <main>
         <NavBar />
         <HomeHero />
-        <ImageGrid />
-        <MapWithNoSSR data={geo} />
+        <About />
         <Footer />
       </main>
     </>

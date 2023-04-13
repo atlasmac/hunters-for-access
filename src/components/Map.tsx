@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import { MapContainer, TileLayer, GeoJSON, Popup } from 'react-leaflet';
-import type { GeoJsonObject } from 'geojson';
+import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import type { GeoJsonObject, Feature } from 'geojson';
 import 'leaflet/dist/leaflet.css';
-import Link from 'next/link';
+import type { Layer } from 'leaflet';
 
 interface StateMapProps {
-  data: GeoJsonObject
+  data: GeoJsonObject;
 }
 
-const StateMap: React.FC<StateMapProps> = ({ data }: StateMapProps) => {
+const Map = ({ data }: StateMapProps) => {
 
-  function onEachFeature(feature: any, layer: any) {
+  function onEachFeature(feature: Feature, layer: Layer) {
     if (feature.properties && feature.properties.NAME) {
-      const { NAME } = feature.properties;
+      const NAME = feature.properties.NAME as string;
       const href = `/state/${NAME}`
-      layer.bindPopup(`<a href={${href}}>${NAME}</a>`);
+      const className = 'text-blue-500 hover:text-blue-700'
+      layer.bindPopup(`<a href={${href}} className={${className}}>${NAME}</a>`);
     }
   }
 
   return (
-    <div className="w-[90vw] mx-auto">
+    <div className="w-full mx-auto">
       <MapContainer
         className='z-0'
         center={[39.5, -98.35]}
@@ -39,5 +39,5 @@ const StateMap: React.FC<StateMapProps> = ({ data }: StateMapProps) => {
   );
 };
 
-export default StateMap;
+export default Map;
 
