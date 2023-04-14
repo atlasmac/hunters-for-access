@@ -7,7 +7,7 @@ function ImageCarousel() {
   return (
     <Carousel
       autoPlay
-      infiniteLoop={false}
+      infiniteLoop={true}
       showThumbs={false}
       showStatus={false}
     >
@@ -17,12 +17,23 @@ function ImageCarousel() {
         btnText={"Learn More"}
         img="/sky.jpg"
       />
-
       <HomePageSlide
         Description="See what we've been up to"
         href={"/blog"}
         btnText={"View Blog"}
         img="/hike.jpg"
+      />
+      <HomePageSlide
+        Description="Montana Hunters for Access"
+        href={"/states/montana"}
+        btnText={"View Chapter"}
+        img="/vista.jpg"
+      />
+      <HomePageSlide
+        Description="Kansas Hunters for Access"
+        href={"/states/kansas"}
+        btnText={"View Chapter"}
+        img="/LPC2.jpg"
       />
     </Carousel>
   );

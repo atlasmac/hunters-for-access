@@ -14,7 +14,12 @@ const Map = ({ data }: StateMapProps) => {
       const NAME = feature.properties.NAME as string;
       const href = `/state/${NAME}`
       const className = 'text-blue-500 hover:text-blue-700'
-      layer.bindPopup(`<a href={${href}} className={${className}}>${NAME}</a>`);
+      // layer.bindPopup(`<a href={${href}} className={${className}}>${NAME}</a>`);
+      layer.on('mouseover', function (e) {
+        layer.bindPopup(`<span >View chapter: <a href={${href}} className={${className}}>${NAME}</a><span>`).openPopup(); // here add openPopup()
+
+      });
+
     }
   }
 

@@ -5,6 +5,49 @@ import Link from "next/link";
 function NavBar() {
   return (
     <div className="navbar sticky top-0 z-30 bg-base-100 font-robotoSlab text-neutral-content">
+      <div className="dropdown lg:hidden">
+        <label tabIndex={0} className="btn m-1">
+          <AiOutlineMenu />
+        </label>
+        <ul
+          tabIndex={0}
+          className="dropdown-content menu rounded-box w-52 bg-base-100 p-2 shadow"
+        >
+          <li>
+            <Link href={"/calendar"}>Upcoming Events</Link>
+          </li>
+          <li tabIndex={0}>
+            <span>Chapters</span>
+            <ul className="bg-base-100 p-2">
+              <li>
+                <Link href="/states/Montana">Montana</Link>
+              </li>
+              <li>
+                <Link href="/states/Kansas">Kansas</Link>
+              </li>
+            </ul>
+          </li>
+          {/* <li tabIndex={0}>
+            <a className="justify-between">
+              States
+              <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+            </a>
+            <ul className="p-2">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul>
+          </li> */}
+          <li>
+            <Link href={"/blog"}>Blog</Link>
+          </li>
+          <li>
+            <Link href={"/support"}>Support</Link>
+          </li>
+          <li>
+            <Link href={"/contact"}>Contact</Link>
+          </li>
+        </ul>
+      </div>
       <div className="flex-1">
         <Link
           className="btn-ghost btn text-lg normal-case sm:text-2xl "
@@ -19,7 +62,17 @@ function NavBar() {
             <Link href={"/calendar"}>Upcoming events</Link>
           </li>
           <li>
-            <Link href={"/#about"}>About us</Link>
+            <Link href={"/blog"}>Blog</Link>
+          </li>
+          <li tabIndex={0}>
+            <a>
+              Chapters
+              <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul className="p-2 bg-base-100">
+              <li><a>Montana</a></li>
+              <li><a>Kansas</a></li>
+            </ul>
           </li>
           <li>
             <Link href={"/support"}>Support</Link>
@@ -29,28 +82,7 @@ function NavBar() {
           </li>
         </ul>
       </div>
-      <div className="dropdown-end dropdown lg:hidden">
-        <label tabIndex={0} className="btn m-1">
-          <AiOutlineMenu />
-        </label>
-        <ul
-          tabIndex={0}
-          className="dropdown-content menu rounded-box w-52 bg-base-100 p-2 shadow"
-        >
-          <li>
-            <Link href={"/calendar"}>Upcoming Events</Link>
-          </li>
-          <li>
-            <Link href={"/#about"}>About us</Link>
-          </li>
-          <li>
-            <Link href={"/support"}>Support</Link>
-          </li>
-          <li>
-            <Link href={"/contact"}>Contact</Link>
-          </li>
-        </ul>
-      </div>
+
     </div>
   );
 }
