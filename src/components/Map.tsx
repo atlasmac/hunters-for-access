@@ -14,9 +14,8 @@ const Map = ({ data }: StateMapProps) => {
       const NAME = feature.properties.NAME as string;
       const href = `/state/${NAME}`
       const className = 'text-blue-500 hover:text-blue-700'
-      // layer.bindPopup(`<a href={${href}} className={${className}}>${NAME}</a>`);
       layer.on('mouseover', function (e) {
-        layer.bindPopup(`<span >View chapter: <a href={${href}} className={${className}}>${NAME}</a><span>`).openPopup(); // here add openPopup()
+        layer.bindPopup(`<p>View chapter: <a href={${href}} className={${className}}>${NAME}</a><p>`).openPopup(); // here add openPopup()
 
       });
 
@@ -35,7 +34,7 @@ const Map = ({ data }: StateMapProps) => {
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         <GeoJSON
           data={data}
-          style={{ fillOpacity: 0.7, color: 'blue', weight: 1, }}
+          style={{ fillOpacity: 0.7, weight: 1, fillColor: 'orange' }}
           onEachFeature={onEachFeature}
         />
 
