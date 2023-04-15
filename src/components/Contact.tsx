@@ -11,9 +11,20 @@ function Contact() {
         </h2>
         <ul>
           <li>
+            <span className='font-thin'>Montana</span>
             <a href="mailto:mrinellabow@gmail.com">
+
               <div className="flex flex-row items-center justify-center gap-x-1 text-lg hover:text-neutral-content/100 sm:text-xl">
                 <AiOutlineMail /> <span>mrinellabow@gmail.com</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <span className='font-thin'>Kansas</span>
+            <a href="mailto:ozwildlife@gmail.com">
+
+              <div className="flex flex-row items-center justify-center gap-x-1 text-lg hover:text-neutral-content/100 sm:text-xl">
+                <AiOutlineMail /> <span>ozwildlife@gmail.com</span>
               </div>
             </a>
           </li>

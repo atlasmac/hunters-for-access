@@ -21,6 +21,10 @@ const server = z.object({
   // Add `.min(1) on ID and SECRET if you want to make sure they're not empty
   GOOGLE_CLIENT_ID: z.string(),
   GOOGLE_CLIENT_SECRET: z.string(),
+  // this is for the calendar
+  CALENDAR_PRIVATE_KEY: z.string(),
+  CALENDAR_CLIENT_EMAIL: z.string(),
+  CALENDAR_ID: z.string(),
 });
 
 /**
@@ -44,6 +48,9 @@ const processEnv = {
   NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+  CALENDAR_PRIVATE_KEY: process.env.CALENDAR_PRIVATE_KEY,
+  CALENDAR_CLIENT_EMAIL: process.env.CALENDAR_CLIENT_EMAIL,
+  CALENDAR_ID: process.env.CALENDAR_ID,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 };
 

@@ -6,7 +6,7 @@ import Contact from '~/components/Contact'
 function contact() {
   return (
     <Layout>
-      <Structure bgImg='/hike.jpg' wideRow={true}>
+      <Structure bgImg="bg-[url('/buckAntelope.jpg')]" wideRow={true}>
         <Contact />
       </Structure>
     </Layout>
