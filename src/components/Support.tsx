@@ -106,10 +106,10 @@ function Support() {
       <div className="form-control w-24 sm:w-28">
         <label className="label cursor-pointer">
           <span className="label-text">Kansas</span>
-          <input type="radio" value={'montana'} name="radio-10" className="radio checked:bg-blue-500" onChange={(e) => setState(e.target.value)} />
+          <input type="radio" value={'kansas'} name="radio-10" className="radio checked:bg-blue-500" onChange={(e) => setState(e.target.value)} />
         </label>
       </div>
-      {state && < Donate />}
+      {state === 'montana' && < Donate />}
     </>
   )
 }
