@@ -1,68 +1,9 @@
 import Donate from "./Donate"
+import { useState } from "react";
+import { allOptions } from "../data/states"
 
 function Support() {
-  const allOptions = [
-    "Alabama",
-    "Alaska",
-    "American Samoa",
-    "Arizona",
-    "Arkansas",
-    "California",
-    "Colorado",
-    "Connecticut",
-    "Delaware",
-    "District of Columbia",
-    "Federated States of Micronesia",
-    "Florida",
-    "Georgia",
-    "Guam",
-    "Hawaii",
-    "Idaho",
-    "Illinois",
-    "Indiana",
-    "Iowa",
-    "Kansas",
-    "Kentucky",
-    "Louisiana",
-    "Maine",
-    "Marshall Islands",
-    "Maryland",
-    "Massachusetts",
-    "Michigan",
-    "Minnesota",
-    "Mississippi",
-    "Missouri",
-    "Montana",
-    "Nebraska",
-    "Nevada",
-    "New Hampshire",
-    "New Jersey",
-    "New Mexico",
-    "New York",
-    "North Carolina",
-    "North Dakota",
-    "Northern Mariana Islands",
-    "Ohio",
-    "Oklahoma",
-    "Oregon",
-    "Palau",
-    "Pennsylvania",
-    "Puerto Rico",
-    "Rhode Island",
-    "South Carolina",
-    "South Dakota",
-    "Tennessee",
-    "Texas",
-    "Utah",
-    "Vermont",
-    "Virgin Island",
-    "Virginia",
-    "Washington",
-    "West Virginia",
-    "Wisconsin",
-    "Wyoming"
-  ];
-
+  const [state, setState] = useState("");
   const options = allOptions.map((option) => {
     return (
       <option key={option} value={option}>
@@ -155,13 +96,20 @@ function Support() {
       <h2 className=" font-robotoSlab text-2xl sm:text-3xl">
         Donate to Hunters for Access
       </h2>
-      <p className="text-xl">
-        Help us raise funds for appreciation gifts such as agricultural
-        supplies and equipment and local farm and ranch store gift
-        certificates for landowners that provide public access through Block
-        Management.
-      </p>
-      <Donate />
+      <h3 className="text-xl">Select a state to donate funds</h3>
+      <div className="form-control w-24 sm:w-28">
+        <label className="label cursor-pointer">
+          <span className="label-text">Montana</span>
+          <input type="radio" value={'montana'} name="radio-10" className="radio checked:bg-red-500" onChange={(e) => setState(e.target.value)} />
+        </label>
+      </div>
+      <div className="form-control w-24 sm:w-28">
+        <label className="label cursor-pointer">
+          <span className="label-text">Kansas</span>
+          <input type="radio" value={'montana'} name="radio-10" className="radio checked:bg-blue-500" onChange={(e) => setState(e.target.value)} />
+        </label>
+      </div>
+      {state && < Donate />}
     </>
   )
 }

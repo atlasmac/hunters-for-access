@@ -4,7 +4,12 @@ import Link from 'next/link'
 function Donate() {
   return (
     <div className='flex flex-col justify-center items-center gap-y-5'>
-
+      <p className="text-xl">
+        Help us raise funds for appreciation gifts such as agricultural
+        supplies and equipment and local farm and ranch store gift
+        certificates for landowners that provide public access through Block
+        Management.
+      </p>
       <h2 className="text-xl">Select a one time donation</h2>
       <div className="flex flex-row gap-x-2">
         <Link
