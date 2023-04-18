@@ -1,7 +1,76 @@
-import Link from 'next/link'
-import React from 'react'
+import Donate from "./Donate"
 
 function Support() {
+  const allOptions = [
+    "Alabama",
+    "Alaska",
+    "American Samoa",
+    "Arizona",
+    "Arkansas",
+    "California",
+    "Colorado",
+    "Connecticut",
+    "Delaware",
+    "District of Columbia",
+    "Federated States of Micronesia",
+    "Florida",
+    "Georgia",
+    "Guam",
+    "Hawaii",
+    "Idaho",
+    "Illinois",
+    "Indiana",
+    "Iowa",
+    "Kansas",
+    "Kentucky",
+    "Louisiana",
+    "Maine",
+    "Marshall Islands",
+    "Maryland",
+    "Massachusetts",
+    "Michigan",
+    "Minnesota",
+    "Mississippi",
+    "Missouri",
+    "Montana",
+    "Nebraska",
+    "Nevada",
+    "New Hampshire",
+    "New Jersey",
+    "New Mexico",
+    "New York",
+    "North Carolina",
+    "North Dakota",
+    "Northern Mariana Islands",
+    "Ohio",
+    "Oklahoma",
+    "Oregon",
+    "Palau",
+    "Pennsylvania",
+    "Puerto Rico",
+    "Rhode Island",
+    "South Carolina",
+    "South Dakota",
+    "Tennessee",
+    "Texas",
+    "Utah",
+    "Vermont",
+    "Virgin Island",
+    "Virginia",
+    "Washington",
+    "West Virginia",
+    "Wisconsin",
+    "Wyoming"
+  ];
+
+  const options = allOptions.map((option) => {
+    return (
+      <option key={option} value={option}>
+        {option}
+      </option>
+    );
+  });
+
   return (
     <>
       <h2 className=" font-robotoSlab text-2xl sm:text-3xl">
@@ -26,7 +95,7 @@ function Support() {
         <div className="flex flex-col gap-y-2">
           <div className="form-control">
             <label className="input-group">
-              <span className="w-22 sm:w-28">First Name</span>
+              <span className="w-24 sm:w-28">First Name</span>
               <input
                 required={true}
                 id="firstName"
@@ -39,7 +108,7 @@ function Support() {
           </div>
           <div className="form-control">
             <label className="input-group">
-              <span className="w-22 sm:w-28">Last Name</span>
+              <span className="w-24 sm:w-28">Last Name</span>
               <input
                 required={true}
                 id="lastName"
@@ -52,7 +121,7 @@ function Support() {
           </div>
           <div className="form-control">
             <label className="input-group">
-              <span className="w-22 sm:w-28">Email</span>
+              <span className="w-24 sm:w-28">Email</span>
               <input
                 required={true}
                 type="email"
@@ -64,17 +133,14 @@ function Support() {
             </label>
           </div>
           <div className="form-control">
-            <label className="input-group">
-              <span className="w-22 sm:w-28">Your State</span>
-              <input
-                required={true}
-                type="state"
-                name="state"
-                id="state"
-                placeholder="your state.."
-                className="input-bordered input"
-              />
-            </label>
+            <select
+              className="select select-bordered w-full max-w-xs"
+              required={true}
+              name="state"
+            >
+              <option disabled selected>Your state</option>
+              {options}
+            </select>
           </div>
           <button
             type="submit"
@@ -95,56 +161,7 @@ function Support() {
         certificates for landowners that provide public access through Block
         Management.
       </p>
-      <h2 className="text-xl">Select a one time donation</h2>
-      <div className="flex flex-row gap-x-2">
-        <Link
-          href={"https://buy.stripe.com/fZedRb3JqfcuaYMfYY"}
-          className="btn-outline btn-primary btn text-sm md:text-2xl"
-        >
-          $25
-        </Link>
-        <Link
-          href={"https://buy.stripe.com/aEU28tgwc1lE8QE001"}
-          className="btn-outline btn-primary btn text-sm md:text-2xl"
-        >
-          $50
-        </Link>
-        <Link
-          href={"https://buy.stripe.com/3cs7sNfs86FYeaY6oq"}
-          className="btn-outline btn-primary btn text-sm md:text-2xl"
-        >
-          $100
-        </Link>
-        <Link
-          href={"https://buy.stripe.com/eVaaEZ3JqggyeaY4gj"}
-          className="btn-outline btn-primary btn text-sm md:text-2xl"
-        >
-          Other
-        </Link>
-      </div>
-      <h2 className="text-xl">Consider a yearly reccuring donation</h2>
-      <div className="flex flex-row gap-x-2">
-        <Link
-          href={"https://buy.stripe.com/fZeeVf5Ry6FY9UI5ko"}
-          className="btn-outline btn-primary btn text-sm md:text-2xl"
-        >
-          $25
-        </Link>
-        <Link
-          href={"https://buy.stripe.com/14kaEZ93K3tMff23ch"}
-          className="btn-outline btn-primary btn text-sm md:text-2xl"
-        >
-          $50
-        </Link>
-        <Link
-          href={"https://buy.stripe.com/3csbJ37ZG9Sa3wkbIO"}
-          className="btn-outline btn-primary btn text-sm md:text-2xl"
-        >
-          $100
-        </Link>
-      </div>
-
-
+      <Donate />
     </>
   )
 }
