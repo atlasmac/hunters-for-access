@@ -52,7 +52,7 @@ function Contact() {
                   type="email"
                   name="email"
                   id="email"
-                  placeholder="info@site.com"
+                  placeholder="YourName@site.com"
                   className="input-bordered input"
                 />
               </label>
