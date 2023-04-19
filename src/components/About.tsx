@@ -1,9 +1,9 @@
 import React from "react";
 import ImageGridOg from "./ImageGridOg";
-import geoJson from "../data/geo.json";
+import geo from "../data/geo.json";
 import dynamic from "next/dynamic";
 import type { GeoJsonObject } from "geojson";
-const geo = geoJson as GeoJsonObject;
+const geoJson = geo as GeoJsonObject;
 
 const Map = dynamic(() => import("../components/Map"), {
   ssr: false,
@@ -32,7 +32,7 @@ function About() {
           <div className="divider"></div>
           <h2 className="py-6 font-robotoSlab text-4xl">Our Chapters</h2>
           <div>
-            <Map data={geo} />
+            <Map data={geoJson} />
           </div>
           <div className="divider"></div>
           <p className="py-6 text-xl">
