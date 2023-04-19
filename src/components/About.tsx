@@ -1,6 +1,6 @@
 import React from "react";
 import ImageGridOg from "./ImageGridOg";
-import geoJson from "~/data/geo.json";
+import geoJson from "../data/geo.json";
 import dynamic from "next/dynamic";
 import type { GeoJsonObject } from "geojson";
 const geo = geoJson as GeoJsonObject;
