@@ -1,12 +1,12 @@
 import React from "react";
 import { fetchEvents } from "../utils/calendar";
-import NavBar from "../components/NavBar";
 import type { calendar_v3 } from "googleapis";
 import Image from "next/image";
-import Footer from "../components/Footer";
 import Head from "next/head";
 import GoogleAnalytics from "../components/GoogleAnalytics";
 import Link from "next/link";
+import Layout from "~/components/Layout";
+import Structure from "~/components/Structure";
 
 type Event = {
   title: string | null | undefined;
@@ -106,28 +106,30 @@ const Calendar = ({ events }: { events: Event[] | undefined }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GoogleAnalytics />
-      <div className="bg-base-200">
-        <NavBar />
-        <div className="flex min-h-screen flex-col items-center justify-center bg-[url('/vista.jpg')] bg-cover bg-fixed bg-bottom">
-          {cal}
-          {events && events?.length < 1 && (
-            <div className="my-5 flex min-h-[20rem] w-80 flex-col items-center justify-center gap-y-5 rounded-lg bg-base-100 p-10 text-center shadow-lg sm:w-2/3 ">
-              <h1 className="font-robotoSlab text-4xl">
-                Please check back soon for upcoming events or join our{" "}
-                <Link
-                  href={"/support"}
-                  className="underline hover:text-slate-700"
-                >
-                  volunteer sign up list.
-                </Link>
-              </h1>
-            </div>
-          )}
-        </div>
-        <Footer />
-      </div>
+      <Layout>
+        <Structure bgImg="bg-[url('/vista.jpg')]" wideRow={false}>
+          <div>
+            {cal}
+            {events && events?.length < 1 && (
+              <div className="my-5 flex min-h-[20rem] w-80 flex-col items-center justify-center gap-y-5 rounded-lg bg-base-100 p-10 text-center shadow-lg sm:w-2/3 ">
+                <h1 className="font-robotoSlab text-4xl">
+                  Please check back soon for upcoming events or join our{" "}
+                  <Link
+                    href={"/support"}
+                    className="underline hover:text-slate-700"
+                  >
+                    volunteer sign up list.
+                  </Link>
+                </h1>
+              </div>
+            )}
+          </div>
+        </Structure>
+      </Layout>
     </>
   );
 };
 
 export default Calendar;
+
+
