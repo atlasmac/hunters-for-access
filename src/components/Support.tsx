@@ -1,6 +1,6 @@
 import Donate from "./Donate"
 import { useState } from "react";
-import { allOptions } from "../data/states"
+import { allOptions } from "../../public/data/states"
 
 function Support() {
   const [state, setState] = useState("");
