@@ -11,11 +11,10 @@ const Map = ({ data }: StateMapProps) => {
 
   function onEachFeature(feature: Feature, layer: Layer) {
     if (feature.properties && feature.properties.NAME) {
-      const NAME = feature.properties.NAME as string;
-      const href = `/state/${NAME}`
-      const className = 'text-blue-500 hover:text-blue-700'
-      layer.on('mouseover', function (e) {
-        layer.bindPopup(`<p>View chapter: <a href={${href}} className={${className}}>${NAME}</a><p>`).openPopup(); // here add openPopup()
+      const Name = feature.properties.NAME as string;
+      // const className = 'text-blue-500 hover:text-blue-700'
+      layer.on('mouseover', function () {
+        layer.bindPopup(`<p>View chapter: <a href="/states/${Name}">${Name}</a><p>`).openPopup();
 
       });
 
